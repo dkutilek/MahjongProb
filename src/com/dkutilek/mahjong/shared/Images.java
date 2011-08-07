@@ -7,7 +7,7 @@ import com.google.gwt.user.client.ui.Image;
 
 public class Images {
 	// IMAGE DIRECTORY
-	public static final String IMAGE_DIR = GWT.getModuleBaseURL() + "images";
+	public static final String IMAGE_DIR = GWT.getModuleBaseURL() + "WEB-INF/images";
 	public static final String JPG = ".jpg";
 	public static final String EMPTY = IMAGE_DIR + "/empty" + JPG;
 	
