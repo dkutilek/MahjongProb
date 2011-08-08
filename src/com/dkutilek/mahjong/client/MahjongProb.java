@@ -31,10 +31,10 @@ public class MahjongProb implements EntryPoint {
 		
 		handPanel = new HandPanel();
 		rootPanel.add(handPanel);
+		
 	}
 	
 	public static Images getImagesConst() {
 		return imagesConst;
 	}
-	
 }
