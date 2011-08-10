@@ -7,30 +7,28 @@ import com.google.gwt.user.client.ui.PushButton;
 
 public class TileButton extends PushButton {
 	
-	public static final String WIDTH = "45px";
-	public static final String HEIGHT = "70px";
+	public static final String WIDTH = "37px";
+	public static final String HEIGHT = "57px";
 	//private Button button;
 	
-	TileButton(Image image) {
+	TileButton(final HandPanel handPanel, Image image, final int i) {
 		super(image);
 		this.setSize(WIDTH, HEIGHT);
-		final PushButton pushButton = this;
 		this.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				if (getText().equals("")) {
-					new ChooseTileDialogBox(pushButton);
+					new ChooseTileDialogBox(handPanel, i);
 				}
 			}
 		});
 	}
-	TileButton() {
+	TileButton(final HandPanel handPanel, final int i) {
 		super();
 		this.setSize(WIDTH, HEIGHT);
-		final PushButton pushButton = this;
 		this.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				if (getText().equals("")) {
-					new ChooseTileDialogBox(pushButton);
+					new ChooseTileDialogBox(handPanel, i);
 				}
 			}
 		});

@@ -19,6 +19,10 @@ public class Images {
 	public static String[] dragonList = {"Green", "Red", "White"};
 	public static String[] windList = {"East", "North", "South", "West"};
 	
+	public static String getImagePath(String type, String subType) {
+		return IMAGE_DIR + "/" + type + "/" + subType + JPG;
+	}
+	
 	public Images() {
 		images = new HashMap<String,HashMap<String,Image>>();
 		for (int i = 0; i < tileTypeList.length; i++) {

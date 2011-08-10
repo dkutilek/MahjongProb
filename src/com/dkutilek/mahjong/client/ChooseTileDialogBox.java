@@ -8,7 +8,6 @@ import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.PushButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class ChooseTileDialogBox extends DialogBox {
@@ -22,7 +21,7 @@ public class ChooseTileDialogBox extends DialogBox {
 	
 	TypeList tileTypeList;
 
-	ChooseTileDialogBox(PushButton pushButton) {
+	ChooseTileDialogBox(final HandPanel handPanel, final int i) {
 		super();
 		ensureDebugId("ChooseTileDialogBox");
 		setText(CAPTION);
@@ -53,7 +52,8 @@ public class ChooseTileDialogBox extends DialogBox {
 		// Add a save button at the bottom-left of the dialog
 		Button saveButton = new Button(SAVE, new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				//MahjongProb.setHandImage(index);
+				handPanel.setHandImage(i, tileTypeList.getSelectedText(),
+						tileTypeList.getSubTypeList().getSelectedText());
 				hide();
 			}
 		});

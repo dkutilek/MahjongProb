@@ -28,7 +28,7 @@ public class HandPanel extends VerticalPanel {
 		
 		for (int i = 0; i < TILES_IN_HAND; i++) {
 			images[i] = new Image(Images.EMPTY);
-			handButtons[i] = new TileButton(images[i]);
+			handButtons[i] = new TileButton(this, images[i], i);
 			handHorizontalPanel.add(handButtons[i]);
 		}
 		handButtons[EAST_TILE].setVisible(false);
@@ -50,20 +50,7 @@ public class HandPanel extends VerticalPanel {
 		handOptionsHorizontalPanel.add(eastToggleButton);
 	}
 
-	private void buildHandButtons() {
-		for (int i = 0; i < TILES_IN_HAND; i++) {
-			handHorizontalPanel.remove(handButtons[i]);
-			handButtons[i] = new TileButton(images[i]);
-			handHorizontalPanel.add(handButtons[i]);
-		}
-		if (!eastToggleButton.isDown()) {
-			handButtons[EAST_TILE].setVisible(false);
-		}
-	}
-	
 	public void setHandImage(int index, String type, String subType) {
-		images[index] = MahjongProb.getImagesConst().getImages().get(type).get(subType);
-		buildHandButtons();
+		images[index].setUrl(Images.getImagePath(type, subType));
 	}
-	
 }

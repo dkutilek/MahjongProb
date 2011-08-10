@@ -6,4 +6,8 @@ public class SubTypeList extends ListBox {
 	SubTypeList() {
 		super();
 	}
+
+	public String getSelectedText() {
+		return getItemText(getSelectedIndex());
+	}
 }

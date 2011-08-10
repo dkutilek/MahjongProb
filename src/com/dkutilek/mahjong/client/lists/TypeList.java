@@ -53,4 +53,8 @@ public class TypeList extends ListBox {
 	public SubTypeList getSubTypeList() {
 		return subTypeList;
 	}
+
+	public String getSelectedText() {
+		return getItemText(getSelectedIndex());
+	}
 }
