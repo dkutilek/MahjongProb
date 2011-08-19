@@ -1,6 +1,6 @@
 package com.dkutilek.mahjong.client;
 
-import com.dkutilek.mahjong.shared.Images;
+import com.dkutilek.mahjong.client.discard.DiscardPanel;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -13,7 +13,7 @@ public class MahjongProb implements EntryPoint {
 	
 	RootPanel rootPanel = RootPanel.get(null);
 	private static HandPanel handPanel;
-	private static Images imagesConst = new Images();
+	private static DiscardPanel discardPanel;
 
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
@@ -28,13 +28,11 @@ public class MahjongProb implements EntryPoint {
 		final Label errorLabel = new Label();
 
 		RootPanel.get("errorLabelContainer").add(errorLabel);
+
+		discardPanel = new DiscardPanel();
+		rootPanel.add(discardPanel);
 		
 		handPanel = new HandPanel();
 		rootPanel.add(handPanel);
-		
-	}
-	
-	public static Images getImagesConst() {
-		return imagesConst;
 	}
 }
