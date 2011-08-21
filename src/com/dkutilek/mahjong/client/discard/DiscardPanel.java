@@ -1,13 +1,12 @@
 package com.dkutilek.mahjong.client.discard;
 
-import com.dkutilek.mahjong.client.TileButton;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Grid;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class DiscardPanel extends VerticalPanel {
-	private TileButton discardTile;
+	private DiscardTileButton discardTileButton;
 	private static final String GRID_WIDTH = "360px";
 	private static final String GRID_HEIGHT = "200px";
 	private static final String TITLE_WIDTH = "60px";
