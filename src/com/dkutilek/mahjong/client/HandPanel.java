@@ -8,19 +8,17 @@ import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ToggleButton;
-import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class HandPanel extends VerticalPanel {
+public class HandPanel extends TilePanel {
 	private static final int TILES_IN_HAND = 13;
 	private static final int EAST_TILE = TILES_IN_HAND - 1;
 	private static TileButton[] handButtons = new TileButton[TILES_IN_HAND];
-	private static Image[] images = new Image[TILES_IN_HAND];
 	private static ToggleButton eastToggleButton;
 	private static HorizontalPanel handHorizontalPanel;
 	private static HorizontalPanel handOptionsHorizontalPanel;
 	
 	public HandPanel() {
-		super();
+		super(TILES_IN_HAND);
 		handHorizontalPanel = new HorizontalPanel();
 		this.add(handHorizontalPanel);
 		handHorizontalPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_BOTTOM);
@@ -48,9 +46,5 @@ public class HandPanel extends VerticalPanel {
 			}
 		});
 		handOptionsHorizontalPanel.add(eastToggleButton);
-	}
-
-	public void setHandImage(int index, String type, String subType) {
-		images[index].setUrl(Images.getImagePath(type, subType));
 	}
 }
