@@ -1,6 +1,5 @@
 package com.dkutilek.mahjong.client.discard;
 
-import com.dkutilek.mahjong.client.ChooseTileDialogBox;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Image;
@@ -15,7 +14,7 @@ public class DiscardTileButton extends PushButton {
 		this.setSize(WIDTH, HEIGHT);
 		this.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				new ChooseTileDialogBox(discardPanel);
+				new DiscardDialogBox(discardPanel);
 			}
 		});
 	}

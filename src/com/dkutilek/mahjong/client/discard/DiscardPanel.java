@@ -29,8 +29,6 @@ public class DiscardPanel extends TilePanel {
 		images[0] = new Image(Images.EMPTY);
 		discardTileButton = new DiscardTileButton(this, images[0]);
 		
-		initHashMap();
-		
 		Grid discardGrid = new Grid(2, 7);
 		discardGrid.setBorderWidth(1);
 		add(discardGrid);
@@ -90,6 +88,8 @@ public class DiscardPanel extends TilePanel {
 		discardGrid.setWidget(1, 5, windGrid);
 		
 		discardGrid.setWidget(1, 6, discardTileButton);
+		
+		initHashMap();
 	}
 	
 	private void initHashMap() {
@@ -98,27 +98,36 @@ public class DiscardPanel extends TilePanel {
 			HashMap<String,Integer> hashMap = new HashMap<String,Integer>();
 			switch (i) {
 			case 0:
+				for (int j = 0; j < Images.numberList.length; j++) {
+					String number = Images.numberList[j];
+					hashMap.put(number, bamGrid.getDiscarded()[j]);
+				}
+				break;
 			case 1:
+				for (int j = 0; j < Images.numberList.length; j++) {
+					String number = Images.numberList[j];
+					hashMap.put(number, crackGrid.getDiscarded()[j]);
+				}
+				break;
 			case 2:
-				for (String number : Images.numberList) {
-					int zero = 0;
-					hashMap.put(number, zero);
+				for (int j = 0; j < Images.numberList.length; j++) {
+					String number = Images.numberList[j];
+					hashMap.put(number, dotGrid.getDiscarded()[j]);
 				}
 				break;
 			case 3:
-				for (String dragon : Images.dragonList) {
-					int zero = 0;
-					hashMap.put(dragon, zero);
+				for (int j = 0; j < Images.numberList.length; j++) {
+					String dragon = Images.dragonList[j];
+					hashMap.put(dragon, dragonGrid.getDiscarded()[j]);
 				}
 				break;
 			case 4:
-			case 5:
-				for (int j = 0; j < 4; j++) {
-					int zero = 0;
-					hashMap.put(Images.numberList[j], zero);
+				for (int j = 0; j < 8; j++) {
+					String flower = Images.numberList[j];
+					hashMap.put(flower, flowerGrid.getDiscarded()[j]);
 				}
 				break;
-			case 6:
+			case 5:
 				for (String wind : Images.windList) {
 					int zero = 0;
 					hashMap.put(wind, zero);

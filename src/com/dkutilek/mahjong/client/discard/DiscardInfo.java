@@ -16,6 +16,14 @@ public abstract class DiscardInfo extends Grid {
 	public DiscardInfo(int rows, int columns) {
 		super(rows,columns);
 	}
-
+	
 	public abstract void discard(String subType);
+
+	public Label[] getLabels() {
+		return labels;
+	}
+
+	public Integer[] getDiscarded() {
+		return discarded;
+	}
 }

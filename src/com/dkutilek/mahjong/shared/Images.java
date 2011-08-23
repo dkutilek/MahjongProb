@@ -13,7 +13,7 @@ public class Images {
 	private HashMap<String,HashMap<String,Image>> images;
 	
 	public static String[] tileTypeList = {"Bam", "Crack", "Dot",
-		"Dragon","Flower", "Season", "Wind"};
+		"Dragon","Flower", "Wind"};
 	public static String[] numberList = {"1", "2", "3", "4", "5",
 		"6", "7", "8", "9"};
 	public static String[] dragonList = {"Green", "Red", "White"};
@@ -46,14 +46,13 @@ public class Images {
 				}
 				break;
 			case 4:
-			case 5:
-				for (int j = 0; j < 4; j++) {
+				for (int j = 0; j < 8; j++) {
 					String numberPath = path + numberList[j] + JPG;
 					Image image = new Image(numberPath);
 					hashMap.put(numberList[j], image);
 				}
 				break;
-			case 6:
+			case 5:
 				for (String wind : windList) {
 					String windPath = path + wind + JPG;
 					Image image = new Image(windPath);

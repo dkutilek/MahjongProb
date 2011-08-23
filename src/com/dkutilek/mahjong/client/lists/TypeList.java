@@ -40,10 +40,9 @@ public class TypeList extends ListBox {
 			subTypeList = new ListDragons();
 			break;
 		case 4:
-		case 5:
-			subTypeList = new ListOneToFour();
+			subTypeList = new ListOneToEight();
 			break;
-		case 6:
+		case 5:
 			subTypeList = new ListWinds();
 			break;
 		}

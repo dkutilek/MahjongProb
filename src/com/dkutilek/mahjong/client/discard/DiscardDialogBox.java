@@ -1,5 +1,6 @@
-package com.dkutilek.mahjong.client;
+package com.dkutilek.mahjong.client.discard;
 
+import com.dkutilek.mahjong.client.TilePanel;
 import com.dkutilek.mahjong.client.lists.TypeList;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -10,8 +11,8 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class ChooseTileDialogBox extends DialogBox {
-
+public class DiscardDialogBox extends DialogBox {
+	
 	public static final String CAPTION = "New Tile Value";
 	public static final String DETAILS = "Choose a new tile:";
 	public static final String CANCEL = "Cancel";
@@ -21,8 +22,8 @@ public class ChooseTileDialogBox extends DialogBox {
 	
 	private VerticalPanel dialogContents;
 	private TypeList tileTypeList;
-
-	public ChooseTileDialogBox(final TilePanel tilePanel, final int i) {
+	
+	public DiscardDialogBox(final TilePanel tilePanel) {
 		super();
 		ensureDebugId("ChooseTileDialogBox");
 		setText(CAPTION);
@@ -53,7 +54,7 @@ public class ChooseTileDialogBox extends DialogBox {
 		// Add a save button at the bottom-left of the dialog
 		Button saveButton = new Button(SAVE, new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				tilePanel.setTileImage(i, tileTypeList.getSelectedText(),
+				tilePanel.setTileImage(tileTypeList.getSelectedText(),
 						tileTypeList.getSubTypeList().getSelectedText());
 				hide();
 			}
