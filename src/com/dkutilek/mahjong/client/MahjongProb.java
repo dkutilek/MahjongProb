@@ -14,6 +14,7 @@ public class MahjongProb implements EntryPoint {
 	RootPanel rootPanel = RootPanel.get(null);
 	private static HandPanel handPanel;
 	private static DiscardPanel discardPanel;
+	private static Label errorLabel;
 
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
@@ -25,7 +26,7 @@ public class MahjongProb implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		final Label errorLabel = new Label();
+		errorLabel = new Label();
 
 		RootPanel.get("errorLabelContainer").add(errorLabel);
 
@@ -34,5 +35,10 @@ public class MahjongProb implements EntryPoint {
 		
 		handPanel = new HandPanel();
 		rootPanel.add(handPanel);
+	}
+	
+	public static void error(String message) {
+		String prev = errorLabel.getText();
+		errorLabel.setText(prev + "\n" + message);
 	}
 }

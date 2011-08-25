@@ -1,6 +1,5 @@
 package com.dkutilek.mahjong.client.discard;
 
-import com.dkutilek.mahjong.client.TilePanel;
 import com.dkutilek.mahjong.client.lists.TypeList;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -23,7 +22,7 @@ public class DiscardDialogBox extends DialogBox {
 	private VerticalPanel dialogContents;
 	private TypeList tileTypeList;
 	
-	public DiscardDialogBox(final TilePanel tilePanel) {
+	public DiscardDialogBox(final DiscardPanel discardPanel) {
 		super();
 		ensureDebugId("ChooseTileDialogBox");
 		setText(CAPTION);
@@ -54,8 +53,10 @@ public class DiscardDialogBox extends DialogBox {
 		// Add a save button at the bottom-left of the dialog
 		Button saveButton = new Button(SAVE, new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				tilePanel.setTileImage(tileTypeList.getSelectedText(),
-						tileTypeList.getSubTypeList().getSelectedText());
+				String type = tileTypeList.getSelectedText();
+				String subType = tileTypeList.getSubTypeList().getSelectedText();
+				discardPanel.setTileImage(type, subType);
+				discardPanel.getDiscardInfo(type).discard(subType);
 				hide();
 			}
 		});

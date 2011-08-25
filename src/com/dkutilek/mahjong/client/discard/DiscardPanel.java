@@ -92,6 +92,30 @@ public class DiscardPanel extends TilePanel {
 		initHashMap();
 	}
 	
+	public DiscardInfo getDiscardInfo(String type) {
+		if (type.equals(Images.tileTypeList[0])) {
+			return bamGrid;
+		}
+		else if (type.equals(Images.tileTypeList[1])) {
+			return crackGrid;
+		}
+		else if (type.equals(Images.tileTypeList[2])) {
+			return dotGrid;
+		}
+		else if (type.equals(Images.tileTypeList[3])) {
+			return dragonGrid;
+		}
+		else if (type.equals(Images.tileTypeList[4])) {
+			return flowerGrid;
+		}
+		else if (type.equals(Images.tileTypeList[5])) {
+			return windGrid;
+		}
+		else {
+			return null;
+		}
+	}
+	
 	private void initHashMap() {
 		discarded = new HashMap<String,HashMap<String,Integer>>();
 		for (int i = 0; i < Images.tileTypeList.length; i++) {
