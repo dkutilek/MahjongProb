@@ -1,6 +1,7 @@
 package com.dkutilek.mahjong.client.discard;
 
 import com.dkutilek.mahjong.client.lists.TypeList;
+import com.dkutilek.mahjong.shared.Images;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -52,14 +53,19 @@ public class DiscardDialogBox extends DialogBox {
 		dialogContents.add(tileSelection);
 		// Add a drop down list for tile type
 		tileTypeList = new TypeList(tileSelection);
-
+		
 		HorizontalPanel saveCancel = new HorizontalPanel();
 		dialogContents.add(saveCancel);
 		// Add a save button at the bottom-left of the dialog
 		Button saveButton = new Button(SAVE, new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				String type = tileTypeList.getSelectedText();
-				String subType = tileTypeList.getSubTypeList().getSelectedText();
+				String subType = "";
+				if (type.equals(Images.tileTypeList[4]))
+					// TODO change to overall no just discard
+					subType = Integer.toString(discardPanel.getDiscardInfo(type).getDiscarded()[0]+1);
+				else
+					subType = tileTypeList.getSubTypeList().getSelectedText();
 				discardPanel.setTileImage(type, subType);
 				discardPanel.getDiscardInfo(type).discard(subType);
 				hide();

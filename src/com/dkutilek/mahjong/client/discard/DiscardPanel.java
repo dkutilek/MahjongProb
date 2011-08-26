@@ -21,7 +21,8 @@ public class DiscardPanel extends TilePanel {
 	DiscardInfoOneToNine crackGrid;
 	DiscardInfoOneToNine dotGrid;
 	DiscardInfoDragon dragonGrid;
-	DiscardInfoFlower flowerGrid;
+	DiscardInfoEmpty flowerGrid;
+	DiscardInfoEmpty jokerGrid;
 	DiscardInfoWind windGrid;
 	
 	/**
@@ -32,7 +33,7 @@ public class DiscardPanel extends TilePanel {
 		images[0] = new Image(Images.EMPTY);
 		discardTileButton = new DiscardTileButton(this, images[0]);
 		
-		Grid discardGrid = new Grid(2, 7);
+		Grid discardGrid = new Grid(2, 8);
 		discardGrid.setBorderWidth(1);
 		add(discardGrid);
 		discardGrid.setSize(GRID_WIDTH, GRID_HEIGHT);
@@ -64,14 +65,19 @@ public class DiscardPanel extends TilePanel {
 		discardGrid.setWidget(0, 4, lblFlower);
 		lblFlower.setSize(TITLE_WIDTH, TITLE_HEIGHT);
 		
+		Label lblJoker = new Label("Joker");
+		lblJoker.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		discardGrid.setWidget(0, 5, lblJoker);
+		lblJoker.setSize(TITLE_WIDTH, TITLE_HEIGHT);
+		
 		Label lblWind = new Label("Wind");
 		lblWind.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		discardGrid.setWidget(0, 5, lblWind);
+		discardGrid.setWidget(0, 6, lblWind);
 		lblWind.setSize(TITLE_WIDTH, TITLE_HEIGHT);
 		
 		Label lblDiscard = new Label("Discard");
 		lblDiscard.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		discardGrid.setWidget(0, 6, lblDiscard);
+		discardGrid.setWidget(0, 7, lblDiscard);
 		lblDiscard.setSize(TITLE_WIDTH, TITLE_HEIGHT);
 		
 		// Grids
@@ -87,13 +93,16 @@ public class DiscardPanel extends TilePanel {
 		dragonGrid = new DiscardInfoDragon();
 		discardGrid.setWidget(1, 3, dragonGrid);
 		
-		flowerGrid = new DiscardInfoFlower();
+		flowerGrid = new DiscardInfoEmpty();
 		discardGrid.setWidget(1, 4, flowerGrid);
 		
-		windGrid = new DiscardInfoWind();
-		discardGrid.setWidget(1, 5, windGrid);
+		jokerGrid = new DiscardInfoEmpty();
+		discardGrid.setWidget(1, 5, jokerGrid);
 		
-		discardGrid.setWidget(1, 6, discardTileButton);
+		windGrid = new DiscardInfoWind();
+		discardGrid.setWidget(1, 6, windGrid);
+		
+		discardGrid.setWidget(1, 7, discardTileButton);
 		
 		initHashMap();
 	}
@@ -120,6 +129,9 @@ public class DiscardPanel extends TilePanel {
 			return flowerGrid;
 		}
 		else if (type.equals(Images.tileTypeList[5])) {
+			return jokerGrid;
+		}
+		else if (type.equals(Images.tileTypeList[6])) {
 			return windGrid;
 		}
 		else {
@@ -161,12 +173,14 @@ public class DiscardPanel extends TilePanel {
 				}
 				break;
 			case 4:
-				for (int j = 0; j < 8; j++) {
-					String flower = Images.numberList[j];
-					hashMap.put(flower, flowerGrid.getDiscarded()[j]);
-				}
+				String flower = Images.tileTypeList[4];
+				hashMap.put(flower, flowerGrid.getDiscarded()[0]);
 				break;
 			case 5:
+				String joker = Images.tileTypeList[5];
+				hashMap.put(joker, jokerGrid.getDiscarded()[0]);
+				break;
+			case 8:
 				for (String wind : Images.windList) {
 					int zero = 0;
 					hashMap.put(wind, zero);

@@ -15,7 +15,7 @@ public class MahjongProb implements EntryPoint {
 	private static HandPanel handPanel;
 	private static DiscardPanel discardPanel;
 	private static Label errorLabel;
-
+	
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
 	 */

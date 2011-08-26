@@ -2,12 +2,17 @@ package com.dkutilek.mahjong.client.discard;
 
 import com.google.gwt.user.client.ui.Label;
 
-public class DiscardInfoFlower extends DiscardInfo {
+public class DiscardInfoEmpty extends DiscardInfo {
+	
+	protected static final String LABEL_HEIGHT = "20px";
+	protected static final String LABEL_WIDTH = "30px";
+	protected static final String GRID_HEIGHT = "20px";
+	protected static final String GRID_WIDTH = "30px";
 	
 	/**
 	 * Constructor for Discard Info Flower
 	 */
-	public DiscardInfoFlower() {
+	public DiscardInfoEmpty() {
 		super(1,1);
 		setHeight(GRID_HEIGHT);
 		setWidth(GRID_WIDTH);
@@ -24,6 +29,6 @@ public class DiscardInfoFlower extends DiscardInfo {
 	
 	public void discard(String subType) {
 		discarded[0]++;
-		labels[0].setText(Integer.toString(discarded[0]++));
+		labels[0].setText(Integer.toString(discarded[0]));
 	}
 }

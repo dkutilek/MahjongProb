@@ -47,9 +47,12 @@ public class TypeList extends ListBox {
 			subTypeList = new ListDragons();
 			break;
 		case 4:
-			subTypeList = new ListOneToEight();
+			subTypeList = new ListEmpty(Images.tileTypeList[4]);
 			break;
 		case 5:
+			subTypeList = new ListEmpty(Images.tileTypeList[5]);
+			break;
+		case 6:
 			subTypeList = new ListWinds();
 			break;
 		}

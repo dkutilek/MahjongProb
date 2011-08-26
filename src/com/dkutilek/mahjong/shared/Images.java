@@ -5,7 +5,7 @@ import java.util.HashMap;
 import com.google.gwt.user.client.ui.Image;
 
 public class Images {
-	// IMAGE DIRECTORY
+
 	public static final String IMAGE_DIR = "images";
 	public static final String JPG = ".jpg";
 	public static final String EMPTY = IMAGE_DIR + "/empty" + JPG;
@@ -13,7 +13,7 @@ public class Images {
 	private HashMap<String,HashMap<String,Image>> images;
 	
 	public static String[] tileTypeList = {"Bam", "Crack", "Dot",
-		"Dragon","Flower", "Wind"};
+		"Dragon","Flower", "Joker", "Wind"};
 	public static String[] numberList = {"1", "2", "3", "4", "5",
 		"6", "7", "8", "9"};
 	public static String[] dragonList = {"Green", "Red", "White"};
@@ -53,6 +53,11 @@ public class Images {
 				}
 				break;
 			case 5:
+				String jokerPath = path + tileTypeList[i] + JPG;
+				Image jokerImage = new Image(jokerPath);
+				hashMap.put(tileTypeList[i], jokerImage);
+				break;
+			case 6:
 				for (String wind : windList) {
 					String windPath = path + wind + JPG;
 					Image image = new Image(windPath);
