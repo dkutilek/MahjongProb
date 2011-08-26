@@ -2,6 +2,7 @@ package com.dkutilek.mahjong.client;
 
 import com.dkutilek.mahjong.client.discard.DiscardPanel;
 import com.dkutilek.mahjong.client.hand.HandPanel;
+import com.dkutilek.mahjong.client.tiles.AllTiles;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -15,6 +16,7 @@ public class MahjongProb implements EntryPoint {
 	RootPanel rootPanel = RootPanel.get(null);
 	private static HandPanel handPanel;
 	private static DiscardPanel discardPanel;
+	private static AllTiles allTiles;
 	private static Label errorLabel;
 	
 	/**
@@ -30,6 +32,8 @@ public class MahjongProb implements EntryPoint {
 		errorLabel = new Label();
 
 		RootPanel.get("errorLabelContainer").add(errorLabel);
+		
+		allTiles = new AllTiles();
 
 		discardPanel = new DiscardPanel();
 		rootPanel.add(discardPanel);
@@ -45,5 +49,13 @@ public class MahjongProb implements EntryPoint {
 	 */
 	public static void error(String message) {
 		errorLabel.setText(message);
+	}
+	
+	/**
+	 * Get all tiles
+	 * @return
+	 */
+	public static AllTiles getAllTiles() {
+		return allTiles;
 	}
 }

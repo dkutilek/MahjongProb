@@ -167,7 +167,7 @@ public class DiscardPanel extends TilePanel {
 				}
 				break;
 			case 3:
-				for (int j = 0; j < Images.numberList.length; j++) {
+				for (int j = 0; j < Images.dragonList.length; j++) {
 					String dragon = Images.dragonList[j];
 					hashMap.put(dragon, dragonGrid.getDiscarded()[j]);
 				}
@@ -181,9 +181,9 @@ public class DiscardPanel extends TilePanel {
 				hashMap.put(joker, jokerGrid.getDiscarded()[0]);
 				break;
 			case 8:
-				for (String wind : Images.windList) {
-					int zero = 0;
-					hashMap.put(wind, zero);
+				for (int j = 0; j < Images.windList.length; j++) {
+					String wind = Images.windList[j];
+					hashMap.put(wind, windGrid.getDiscarded()[j]);
 				}
 				break;
 			}
