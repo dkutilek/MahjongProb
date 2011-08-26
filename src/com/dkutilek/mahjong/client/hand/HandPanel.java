@@ -1,5 +1,7 @@
-package com.dkutilek.mahjong.client;
+package com.dkutilek.mahjong.client.hand;
 
+import com.dkutilek.mahjong.client.tiles.TileButton;
+import com.dkutilek.mahjong.client.tiles.TilePanel;
 import com.dkutilek.mahjong.shared.Images;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

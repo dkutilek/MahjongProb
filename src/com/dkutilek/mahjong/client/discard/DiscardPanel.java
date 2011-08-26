@@ -2,7 +2,7 @@ package com.dkutilek.mahjong.client.discard;
 
 import java.util.HashMap;
 
-import com.dkutilek.mahjong.client.TilePanel;
+import com.dkutilek.mahjong.client.tiles.TilePanel;
 import com.dkutilek.mahjong.shared.Images;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;

@@ -1,4 +1,4 @@
-package com.dkutilek.mahjong.client;
+package com.dkutilek.mahjong.client.tiles;
 
 import com.dkutilek.mahjong.shared.Images;
 import com.google.gwt.user.client.ui.Image;
