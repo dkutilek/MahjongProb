@@ -5,6 +5,9 @@ import com.google.gwt.user.client.ui.Label;
 
 public class DiscardInfoDragon extends DiscardInfo {
 	
+	/**
+	 * Constructor for Discard Info Dragon
+	 */
 	public DiscardInfoDragon() {
 		super(3,2);
 		setHeight(GRID_HEIGHT);

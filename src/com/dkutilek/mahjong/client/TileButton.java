@@ -9,8 +9,13 @@ public class TileButton extends PushButton {
 	
 	public static final String WIDTH = "37px";
 	public static final String HEIGHT = "57px";
-	//private Button button;
 	
+	/**
+	 * Constructor for Tile Button
+	 * @param handPanel - Hand Panel the tile is a part of
+	 * @param image - Image on the tile
+	 * @param i - index of tile
+	 */
 	TileButton(final HandPanel handPanel, Image image, final int i) {
 		super(image);
 		this.setSize(WIDTH, HEIGHT);
@@ -22,6 +27,13 @@ public class TileButton extends PushButton {
 			}
 		});
 	}
+
+	/**
+	 * Constructor for Tile Button. No image is given, so no image
+	 * is displayed.
+	 * @param handPanel - Hand Panel the tile is a part of
+	 * @param i - index of tile
+	 */
 	TileButton(final HandPanel handPanel, final int i) {
 		super();
 		this.setSize(WIDTH, HEIGHT);

@@ -11,6 +11,10 @@ public class TypeList extends ListBox {
 	private SubTypeList subTypeList;
 	private Panel panel;
 	
+	/**
+	 * Constructor for Type List
+	 * @param panel - the panel where this Type List resides.
+	 */
 	public TypeList(Panel panel) {
 		super();
 		this.panel = panel;
@@ -28,6 +32,9 @@ public class TypeList extends ListBox {
 		panel.add(subTypeList);
 	}
 
+	/**
+	 * Set the sub-type list to the corresponding options.
+	 */
 	private void setSubList() {
 		panel.remove(subTypeList);
 		switch (getSelectedIndex()) {
@@ -49,10 +56,18 @@ public class TypeList extends ListBox {
 		panel.add(subTypeList);
 	}
 
+	/**
+	 * Get the Sub Type List
+	 * @return the Sub Type List
+	 */
 	public SubTypeList getSubTypeList() {
 		return subTypeList;
 	}
 
+	/**
+	 * Get the Selected Text of the Type List
+	 * @return the Selected Text
+	 */
 	public String getSelectedText() {
 		return getItemText(getSelectedIndex());
 	}

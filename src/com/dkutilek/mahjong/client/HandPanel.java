@@ -17,6 +17,9 @@ public class HandPanel extends TilePanel {
 	private static HorizontalPanel handHorizontalPanel;
 	private static HorizontalPanel handOptionsHorizontalPanel;
 	
+	/**
+	 * Constructor for Hand Panel
+	 */
 	public HandPanel() {
 		super(TILES_IN_HAND);
 		handHorizontalPanel = new HorizontalPanel();

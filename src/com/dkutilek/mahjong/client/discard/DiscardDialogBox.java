@@ -22,6 +22,11 @@ public class DiscardDialogBox extends DialogBox {
 	private VerticalPanel dialogContents;
 	private TypeList tileTypeList;
 	
+	/**
+	 * Constructor for Discard Dialog Box
+	 * @param discardPanel - Discard Panel to edit based on
+	 * the user selection in the pop-up.
+	 */
 	public DiscardDialogBox(final DiscardPanel discardPanel) {
 		super();
 		ensureDebugId("ChooseTileDialogBox");

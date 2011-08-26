@@ -9,6 +9,12 @@ public class DiscardTileButton extends PushButton {
 	public static final String WIDTH = "37px";
 	public static final String HEIGHT = "57px";
 	
+	/**
+	 * Constructor for Discard Tile Button
+	 * @param discardPanel - Discard Panel to edit with user input
+	 * from the pop-up
+	 * @param image - Image to be displayed on the tile
+	 */
 	DiscardTileButton(final DiscardPanel discardPanel, Image image) {
 		super(image);
 		this.setSize(WIDTH, HEIGHT);

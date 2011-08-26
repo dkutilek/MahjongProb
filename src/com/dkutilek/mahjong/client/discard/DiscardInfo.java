@@ -17,6 +17,10 @@ public abstract class DiscardInfo extends Grid {
 		super(rows,columns);
 	}
 	
+	/**
+	 * Discard a tile of the given sub-type
+	 * @param subType - tile sub-type to be discarded.
+	 */
 	public abstract void discard(String subType);
 
 	public Label[] getLabels() {

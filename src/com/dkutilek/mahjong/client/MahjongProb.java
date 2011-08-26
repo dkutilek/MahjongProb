@@ -37,8 +37,12 @@ public class MahjongProb implements EntryPoint {
 		rootPanel.add(handPanel);
 	}
 	
+	/**
+	 * Write an error to the error label. This message will overwrite
+	 * any previous message.
+	 * @param message - Message to be written
+	 */
 	public static void error(String message) {
-		String prev = errorLabel.getText();
-		errorLabel.setText(prev + "\n" + message);
+		errorLabel.setText(message);
 	}
 }

@@ -22,6 +22,12 @@ public class ChooseTileDialogBox extends DialogBox {
 	private VerticalPanel dialogContents;
 	private TypeList tileTypeList;
 
+	/**
+	 * Constructor for Choose Tile Dialog Box
+	 * @param tilePanel - Tile Panel to change with user input from this
+	 * dialog box.
+	 * @param i - The index of the tile associated with this dialog box.
+	 */
 	public ChooseTileDialogBox(final TilePanel tilePanel, final int i) {
 		super();
 		ensureDebugId("ChooseTileDialogBox");

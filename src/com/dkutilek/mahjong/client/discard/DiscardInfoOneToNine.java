@@ -5,6 +5,9 @@ import com.google.gwt.user.client.ui.Label;
 
 public class DiscardInfoOneToNine extends DiscardInfo {
 	
+	/**
+	 * Constructor for Discard Info One To Nine
+	 */
 	public DiscardInfoOneToNine() {
 		super(9,2);
 		setHeight(GRID_HEIGHT);
@@ -26,7 +29,7 @@ public class DiscardInfoOneToNine extends DiscardInfo {
 			setWidget(i, 0, label);
 		}
 	}
-	
+
 	public void discard(String subType) {
 		if (subType.equals(Images.numberList[0])) {
 			discarded[0]++;

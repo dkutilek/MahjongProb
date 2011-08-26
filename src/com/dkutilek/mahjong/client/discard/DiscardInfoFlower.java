@@ -4,6 +4,9 @@ import com.google.gwt.user.client.ui.Label;
 
 public class DiscardInfoFlower extends DiscardInfo {
 	
+	/**
+	 * Constructor for Discard Info Flower
+	 */
 	public DiscardInfoFlower() {
 		super(1,1);
 		setHeight(GRID_HEIGHT);

@@ -24,6 +24,9 @@ public class DiscardPanel extends TilePanel {
 	DiscardInfoFlower flowerGrid;
 	DiscardInfoWind windGrid;
 	
+	/**
+	 * Constructor for Discard Panel
+	 */
 	public DiscardPanel() {
 		super(1);
 		images[0] = new Image(Images.EMPTY);
@@ -34,6 +37,8 @@ public class DiscardPanel extends TilePanel {
 		add(discardGrid);
 		discardGrid.setSize(GRID_WIDTH, GRID_HEIGHT);
 		
+		
+		// Labels
 		Label lblBam = new Label("Bam");
 		lblBam.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		discardGrid.setWidget(0, 0, lblBam);
@@ -69,6 +74,7 @@ public class DiscardPanel extends TilePanel {
 		discardGrid.setWidget(0, 6, lblDiscard);
 		lblDiscard.setSize(TITLE_WIDTH, TITLE_HEIGHT);
 		
+		// Grids
 		bamGrid = new DiscardInfoOneToNine();
 		discardGrid.setWidget(1, 0, bamGrid);
 		
@@ -92,6 +98,11 @@ public class DiscardPanel extends TilePanel {
 		initHashMap();
 	}
 	
+	/**
+	 * Return grid associated with the given type.
+	 * @param type - Type of tile
+	 * @return the DiscardInfo associated with the type
+	 */
 	public DiscardInfo getDiscardInfo(String type) {
 		if (type.equals(Images.tileTypeList[0])) {
 			return bamGrid;
@@ -116,6 +127,10 @@ public class DiscardPanel extends TilePanel {
 		}
 	}
 	
+	/**
+	 * Initialize the hash map to have all of the discard
+	 * values from all of the discard info grids.
+	 */
 	private void initHashMap() {
 		discarded = new HashMap<String,HashMap<String,Integer>>();
 		for (int i = 0; i < Images.tileTypeList.length; i++) {

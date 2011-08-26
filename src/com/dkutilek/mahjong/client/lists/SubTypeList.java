@@ -7,6 +7,10 @@ public class SubTypeList extends ListBox {
 		super();
 	}
 
+	/**
+	 * Get the selected text of the Sub Type List
+	 * @return the text selected.
+	 */
 	public String getSelectedText() {
 		return getItemText(getSelectedIndex());
 	}
