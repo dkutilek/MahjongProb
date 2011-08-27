@@ -113,25 +113,25 @@ public class DiscardPanel extends TilePanel {
 	 * @return the DiscardInfo associated with the type
 	 */
 	public DiscardInfo getDiscardInfo(String type) {
-		if (type.equals(Images.tileTypeList[0])) {
+		if (type.equals(Images.BAM)) {
 			return bamGrid;
 		}
-		else if (type.equals(Images.tileTypeList[1])) {
+		else if (type.equals(Images.CRACK)) {
 			return crackGrid;
 		}
-		else if (type.equals(Images.tileTypeList[2])) {
+		else if (type.equals(Images.DOT)) {
 			return dotGrid;
 		}
-		else if (type.equals(Images.tileTypeList[3])) {
+		else if (type.equals(Images.DRAGON)) {
 			return dragonGrid;
 		}
-		else if (type.equals(Images.tileTypeList[4])) {
+		else if (type.equals(Images.FLOWER)) {
 			return flowerGrid;
 		}
-		else if (type.equals(Images.tileTypeList[5])) {
+		else if (type.equals(Images.JOKER)) {
 			return jokerGrid;
 		}
-		else if (type.equals(Images.tileTypeList[6])) {
+		else if (type.equals(Images.WIND)) {
 			return windGrid;
 		}
 		else {
@@ -173,11 +173,11 @@ public class DiscardPanel extends TilePanel {
 				}
 				break;
 			case 4:
-				String flower = Images.tileTypeList[4];
+				String flower = Images.FLOWER;
 				hashMap.put(flower, flowerGrid.getDiscarded()[0]);
 				break;
 			case 5:
-				String joker = Images.tileTypeList[5];
+				String joker = Images.JOKER;
 				hashMap.put(joker, jokerGrid.getDiscarded()[0]);
 				break;
 			case 8:

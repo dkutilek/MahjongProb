@@ -61,7 +61,7 @@ public class DiscardDialogBox extends DialogBox {
 			public void onClick(ClickEvent event) {
 				String type = tileTypeList.getSelectedText();
 				String subType = "";
-				if (type.equals(Images.tileTypeList[4]))
+				if (type.equals(Images.FLOWER))
 					// TODO change to overall no just discard
 					subType = Integer.toString(discardPanel.getDiscardInfo(type).getDiscarded()[0]+1);
 				else

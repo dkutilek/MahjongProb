@@ -40,14 +40,14 @@ public class AllTiles {
 			case 4:
 				{
 					int zero = 0;
-					String flower = Images.tileTypeList[4];
+					String flower = Images.FLOWER;
 					hashMap.put(flower, zero);
 				}
 				break;
 			case 5:
 				{
 					int zero = 0;
-					String joker = Images.tileTypeList[5];
+					String joker = Images.JOKER;
 					hashMap.put(joker, zero);
 				}
 				break;
@@ -72,8 +72,8 @@ public class AllTiles {
 		Integer num = get(type, subType);
 		if (num == null)
 			return false;
-		if (type.equals(Images.tileTypeList[4]) ||
-			type.equals(Images.tileTypeList[5])) {
+		if (type.equals(Images.FLOWER) ||
+			type.equals(Images.JOKER)) {
 			if (num < 8) {
 				return true;
 			}
@@ -92,25 +92,25 @@ public class AllTiles {
 	 * @return true or false
 	 */
 	public boolean isAvailable(String type) {
-		if (type.equals(Images.tileTypeList[0]) ||
-			type.equals(Images.tileTypeList[1]) ||
-			type.equals(Images.tileTypeList[2])) {
+		if (type.equals(Images.BAM) ||
+			type.equals(Images.CRACK) ||
+			type.equals(Images.DOT)) {
 			for (String subType : Images.numberList) {
 				if (isAvailable(type, subType))
 					return true;
 			}
 		}
-		else if (type.equals(Images.tileTypeList[3])) {
+		else if (type.equals(Images.DRAGON)) {
 			for (String subType : Images.dragonList) {
 				if (isAvailable(type, subType))
 					return true;
 			}
 		}
-		else if (type.equals(Images.tileTypeList[4]) ||
-				 type.equals(Images.tileTypeList[5])) {
+		else if (type.equals(Images.FLOWER) ||
+				 type.equals(Images.JOKER)) {
 			return isAvailable(type,type);
 		}
-		else if (type.equals(Images.tileTypeList[6])) {
+		else if (type.equals(Images.WIND)) {
 			for (String subType : Images.windList) {
 				if (isAvailable(type, subType))
 					return true;
@@ -128,8 +128,8 @@ public class AllTiles {
 		Integer num = get(type, subType);
 		if (num == null)
 			return;
-		if (type.equals(Images.tileTypeList[4]) ||
-			type.equals(Images.tileTypeList[5])) {
+		if (type.equals(Images.FLOWER) ||
+			type.equals(Images.JOKER)) {
 			if (num < 8) {
 				set(num+1, type, subType);
 			}
@@ -174,8 +174,8 @@ public class AllTiles {
 		if (num == null) {
 			return -1;
 		}
-		if (type.equals(Images.tileTypeList[4]) ||
-			type.equals(Images.tileTypeList[5])) {
+		if (type.equals(Images.FLOWER) ||
+			type.equals(Images.JOKER)) {
 			return 8 - num;
 		}
 		else {
