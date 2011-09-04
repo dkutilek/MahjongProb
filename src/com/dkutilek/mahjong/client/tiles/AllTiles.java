@@ -51,7 +51,7 @@ public class AllTiles {
 					hashMap.put(joker, zero);
 				}
 				break;
-			case 8:
+			case 6:
 				for (String wind : Images.windList) {
 					int zero = 0;
 					hashMap.put(wind, zero);
@@ -70,8 +70,9 @@ public class AllTiles {
 	 */
 	public boolean isAvailable(String type, String subType) {
 		Integer num = get(type, subType);
-		if (num == null)
+		if (num == null) {
 			return false;
+		}
 		if (type.equals(Images.FLOWER) ||
 			type.equals(Images.JOKER)) {
 			if (num < 8) {
@@ -159,7 +160,12 @@ public class AllTiles {
 	 * @return the number of visible tiles
 	 */
 	public Integer get(String type, String subType) {
-		return tiles.get(type).get(subType);
+		HashMap<String,Integer> hashMap = tiles.get(type);
+		if (hashMap != null)
+			return tiles.get(type).get(subType);
+		else {
+			return null;
+		}
 	}
 	
 	/**
@@ -172,7 +178,7 @@ public class AllTiles {
 	public int getAvailable(String type, String subType) {
 		Integer num = get(type, subType);
 		if (num == null) {
-			return -1;
+			return 0;
 		}
 		if (type.equals(Images.FLOWER) ||
 			type.equals(Images.JOKER)) {

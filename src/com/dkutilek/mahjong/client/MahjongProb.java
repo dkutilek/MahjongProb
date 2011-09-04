@@ -6,6 +6,7 @@ import com.dkutilek.mahjong.client.tiles.AllTiles;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -18,6 +19,7 @@ public class MahjongProb implements EntryPoint {
 	private static DiscardPanel discardPanel;
 	private static AllTiles allTiles;
 	private static Label errorLabel;
+	private static VerticalPanel debugPanel;
 	
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
@@ -32,6 +34,9 @@ public class MahjongProb implements EntryPoint {
 		errorLabel = new Label();
 
 		RootPanel.get("errorLabelContainer").add(errorLabel);
+		
+		debugPanel = new VerticalPanel();
+		rootPanel.add(debugPanel);
 		
 		allTiles = new AllTiles();
 
@@ -49,6 +54,12 @@ public class MahjongProb implements EntryPoint {
 	 */
 	public static void error(String message) {
 		errorLabel.setText(message);
+	}
+	
+	public static void debug(String message) {
+		Label label = new Label();
+		label.setText(message);
+		debugPanel.add(label);
 	}
 	
 	/**
