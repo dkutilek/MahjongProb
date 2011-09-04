@@ -1,7 +1,9 @@
 package com.dkutilek.mahjong.client.hand;
 
+import com.dkutilek.mahjong.client.MahjongProb;
 import com.dkutilek.mahjong.client.lists.TypeList;
 import com.dkutilek.mahjong.client.tiles.TilePanel;
+import com.dkutilek.mahjong.shared.Images;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -11,7 +13,7 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class ChooseTileDialogBox extends DialogBox {
+public class HandDialogBox extends DialogBox {
 
 	public static final String CAPTION = "New Tile Value";
 	public static final String DETAILS = "Choose a new tile:";
@@ -29,7 +31,7 @@ public class ChooseTileDialogBox extends DialogBox {
 	 * dialog box.
 	 * @param i - The index of the tile associated with this dialog box.
 	 */
-	public ChooseTileDialogBox(final TilePanel tilePanel, final int i) {
+	public HandDialogBox(final TilePanel tilePanel, final int i) {
 		super();
 		ensureDebugId("ChooseTileDialogBox");
 		setText(CAPTION);
@@ -60,8 +62,20 @@ public class ChooseTileDialogBox extends DialogBox {
 		// Add a save button at the bottom-left of the dialog
 		Button saveButton = new Button(SAVE, new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				tilePanel.setTileImage(i, tileTypeList.getSelectedText(),
-						tileTypeList.getSubTypeList().getSelectedText());
+				String type = tileTypeList.getSelectedText();
+				String imageSubType = "";
+				String allTilesSubType = "";
+				if (type.equals(Images.FLOWER)) {
+					imageSubType = Integer.toString(MahjongProb.getAllTiles().get(
+							Images.FLOWER, Images.FLOWER) + 1);
+					allTilesSubType = Images.FLOWER;
+				}
+				else {
+					imageSubType = tileTypeList.getSubTypeList().getSelectedText();
+					allTilesSubType = tileTypeList.getSubTypeList().getSelectedText();
+				}
+				tilePanel.setTileImage(i, type, imageSubType);
+				MahjongProb.getAllTiles().add(type, allTilesSubType);
 				hide();
 			}
 		});

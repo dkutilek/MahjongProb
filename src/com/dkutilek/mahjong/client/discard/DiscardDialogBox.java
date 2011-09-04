@@ -1,5 +1,6 @@
 package com.dkutilek.mahjong.client.discard;
 
+import com.dkutilek.mahjong.client.MahjongProb;
 import com.dkutilek.mahjong.client.lists.TypeList;
 import com.dkutilek.mahjong.shared.Images;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -12,21 +13,22 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class DiscardDialogBox extends DialogBox {
-	
+
 	public static final String CAPTION = "New Tile Value";
 	public static final String DETAILS = "Choose a new tile:";
 	public static final String CANCEL = "Cancel";
 	public static final String SAVE = "Save";
 	public static final String WIDTH = "180px";
 	public static final String HEIGHT = "120px";
-	
+
 	private VerticalPanel dialogContents;
 	private TypeList tileTypeList;
-	
+
 	/**
 	 * Constructor for Discard Dialog Box
-	 * @param discardPanel - Discard Panel to edit based on
-	 * the user selection in the pop-up.
+	 * 
+	 * @param discardPanel - Discard Panel to edit based on the user
+	 * selection in the pop-up.
 	 */
 	public DiscardDialogBox(final DiscardPanel discardPanel) {
 		super();
@@ -53,7 +55,7 @@ public class DiscardDialogBox extends DialogBox {
 		dialogContents.add(tileSelection);
 		// Add a drop down list for tile type
 		tileTypeList = new TypeList(tileSelection);
-		
+
 		HorizontalPanel saveCancel = new HorizontalPanel();
 		dialogContents.add(saveCancel);
 		// Add a save button at the bottom-left of the dialog
@@ -62,12 +64,13 @@ public class DiscardDialogBox extends DialogBox {
 				String type = tileTypeList.getSelectedText();
 				String subType = "";
 				if (type.equals(Images.FLOWER))
-					// TODO change to overall no just discard
-					subType = Integer.toString(discardPanel.getDiscardInfo(type).getDiscarded()[0]+1);
+					subType = Integer.toString(MahjongProb.getAllTiles().get(
+							Images.FLOWER, Images.FLOWER) + 1);
 				else
 					subType = tileTypeList.getSubTypeList().getSelectedText();
 				discardPanel.setTileImage(type, subType);
 				discardPanel.getDiscardInfo(type).discard(subType);
+				MahjongProb.getAllTiles().add(type, subType);
 				hide();
 			}
 		});

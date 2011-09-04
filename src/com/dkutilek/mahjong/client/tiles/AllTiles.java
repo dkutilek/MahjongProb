@@ -158,7 +158,7 @@ public class AllTiles {
 	 * @param subType - sub-type of the tile
 	 * @return the number of visible tiles
 	 */
-	public int get(String type, String subType) {
+	public Integer get(String type, String subType) {
 		return tiles.get(type).get(subType);
 	}
 	

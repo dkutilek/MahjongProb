@@ -1,6 +1,5 @@
 package com.dkutilek.mahjong.client.hand;
 
-import com.dkutilek.mahjong.client.tiles.TileButton;
 import com.dkutilek.mahjong.client.tiles.TilePanel;
 import com.dkutilek.mahjong.shared.Images;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -14,7 +13,7 @@ import com.google.gwt.user.client.ui.ToggleButton;
 public class HandPanel extends TilePanel {
 	private static final int TILES_IN_HAND = 13;
 	private static final int EAST_TILE = TILES_IN_HAND - 1;
-	private static TileButton[] handButtons = new TileButton[TILES_IN_HAND];
+	private static HandTileButton[] handButtons = new HandTileButton[TILES_IN_HAND];
 	private static ToggleButton eastToggleButton;
 	private static HorizontalPanel handHorizontalPanel;
 	private static HorizontalPanel handOptionsHorizontalPanel;
@@ -31,7 +30,7 @@ public class HandPanel extends TilePanel {
 		
 		for (int i = 0; i < TILES_IN_HAND; i++) {
 			images[i] = new Image(Images.EMPTY);
-			handButtons[i] = new TileButton(this, images[i], i);
+			handButtons[i] = new HandTileButton(this, images[i], i);
 			handHorizontalPanel.add(handButtons[i]);
 		}
 		handButtons[EAST_TILE].setVisible(false);
